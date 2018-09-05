@@ -22,7 +22,7 @@ describe('Thermostat', function() {
   });
 
   it('will not go below 10 degress', function(){
-    thermostat.temperature = 10;
+    thermostat._temperature = 10;
     thermostat.down();
     expect(thermostat.currentTemperature()).toEqual(10);
   });
@@ -35,12 +35,29 @@ describe('Thermostat', function() {
   it('can reset temperature to 20 degress', function(){
     thermostat.up();
     thermostat.reset();
-    expect(thermostat.currentTemperature()).toEqual(20)
-  })
+    expect(thermostat.currentTemperature()).toEqual(20);
+  });
+
+  describe('.energy usage returns', function() {
+    it('low usages when below 18 degrees', function() {
+      thermostat._temperature = 16;
+      expect(thermostat.energyUsage()).toEqual('low-usage');
+    });
+
+    it('medium usages when below 25 degrees', function() {
+      thermostat._temperature = 23;
+      expect(thermostat.energyUsage()).toEqual('medium-usage');
+    });
+
+    it('high usages when above 24 degrees', function() {
+      thermostat._temperature = 28;
+      expect(thermostat.energyUsage()).toEqual('high-usage');
+    });
+  });
 
   describe('when power saving mode is on', function() {
     it('maximum temperature allowed is 25 degrees', function() {
-      thermostat.temperature = 25;
+      thermostat._temperature = 25;
       thermostat.up();
       expect(thermostat.currentTemperature()).toEqual(25);
     });
@@ -48,7 +65,7 @@ describe('Thermostat', function() {
 
   describe('when power saving mode is off', function() {
     it('maximum temperature allowed is 32 degrees', function() {
-      thermostat.temperature = 28;
+      thermostat._temperature = 28;
       thermostat.switchPowerSavingMode();
       thermostat.up();
       expect(thermostat.currentTemperature()).toEqual(29);
