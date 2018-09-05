@@ -1,6 +1,7 @@
 function Thermostat() {
   STARTINGTEMP = 20
   this.temperature = STARTINGTEMP
+  this.isPowerSavingMode = true
 };
 
 Thermostat.prototype.currentTemperature = function() {
@@ -12,5 +13,11 @@ Thermostat.prototype.up = function() {
 };
 
 Thermostat.prototype.down = function() {
-  this.temperature -= 1
+  if (this.temperature > 10) {
+    this.temperature -= 1
+  };
+};
+
+Thermostat.prototype.switchPowerSavingMode = function() {
+  this.isPowerSavingMode = !this.isPowerSavingMode
 };
