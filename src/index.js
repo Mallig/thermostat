@@ -14,8 +14,9 @@ $( document ).ready( function() {
     document.getElementById("temp").innerHTML = thermostat.currentTemperature()
   });
   
-  // $( "#reset" ).click(function() {
-    
-  // });
+  $( "#reset" ).click(function() {
+    thermostat.reset()
+    document.getElementById('temp').innerHTML = thermostat.currentTemperature()
+  });
     
 });
