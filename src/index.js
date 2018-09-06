@@ -25,6 +25,7 @@ $( document ).ready( function() {
 
   function updateTemperature() {
     $( '#temp' ).text(thermostat.currentTemperature())
+    $('#temp' ).attr('class', thermostat.energyUsage());
   }
 
 });
