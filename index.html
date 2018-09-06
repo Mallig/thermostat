@@ -3,7 +3,6 @@
     <title>
       Thermostat
     </title>
-    <script src="jquery-3.3.1.min.js"></script>
 
   </head>
 
@@ -13,27 +12,26 @@
     <section>
       <h1 id="temperature-control">
         <p>
-          <button id="increase">+</button>
+          <button id="up">+</button>
           <p id="temp">0</p>
-          <button id="decrease">-</button>
+          <button id="down">-</button>
           <button id="reset">reset</button>
         </p>
       </h1>
       <h1 id="power-saving-mode">
         <p>
-          <button id="poswersaving">Power Saver</button>
+          <button id="powersaving">Power Saver</button>
         </p>
       </h1>
     </section>
-    <script>
-      $( document ).ready(function() {
-        $( "a" ).click(function( event ) {
-            alert( "The link will no longer take you to jquery.com" );
-            event.preventDefault();
-        });
-    });
+    <!-- <script>
+      $( "#up" ).click(function() {
+        console.log("up button clicked by the user on this laptop..; ")
+      })
  
-    </script>
+    </script> -->
+    <script src="src/index.js"></script>
+
     <script src="src/Thermostat.js"></script>
   </body>
 </html>
