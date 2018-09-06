@@ -6,22 +6,25 @@ $( document ).ready( function() {
   
   $( "#up" ).click(function() {
     thermostat.up()
-    document.getElementById("temp").innerHTML = thermostat.currentTemperature()
-  });
+    updateTemperature()
+    });
   
   $( "#down" ).click(function() {
     thermostat.down()
-    document.getElementById("temp").innerHTML = thermostat.currentTemperature()
-  });
+    updateTemperature()
+    });
   
   $( "#reset" ).click(function() {
     thermostat.reset()
-    document.getElementById('temp').innerHTML = thermostat.currentTemperature()
-  });
+    updateTemperature()
+    });
 
   $( "#switch-powersaving" ).click(function() {
     thermostat.switchPowerSavingMode()
-    document.getElementById('temp').innerHTML = thermostat.currentTemperature()
-  });
-    
+    updateTemperature()  });
+
+  function updateTemperature() {
+    $( '#temp' ).text(thermostat.currentTemperature())
+  }
+
 });
