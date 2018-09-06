@@ -1,7 +1,21 @@
-$( "#up" ).click(function() {
-  console.log("up button clicked by the user on this laptop..; ")
-})
+$( document ).ready( function() {
 
-$( "#down" ).click(function() {
-  console.log("down button clicked by the user on this laptop..; ")
-})
+  var thermostat = new Thermostat();
+
+  document.getElementById("temp").innerHTML = 20
+  
+  $( "#up" ).click(function() {
+    thermostat.up()
+    document.getElementById("temp").innerHTML = thermostat.currentTemperature()
+  });
+  
+  $( "#down" ).click(function() {
+    thermostat.down()
+    document.getElementById("temp").innerHTML = thermostat.currentTemperature()
+  });
+  
+  // $( "#reset" ).click(function() {
+    
+  // });
+    
+});
