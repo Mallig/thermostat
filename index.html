@@ -3,9 +3,12 @@
     <title>
       Thermostat
     </title>
+    <script src="jquery-3.3.1.min.js"></script>
+
   </head>
 
   <body>
+    <a href="http://jquery.com">Jquery</a>
       <script src="jquery.js"></script>
     <section>
       <h1 id="temperature-control">
@@ -22,6 +25,15 @@
         </p>
       </h1>
     </section>
+    <script>
+      $( document ).ready(function() {
+        $( "a" ).click(function( event ) {
+            alert( "The link will no longer take you to jquery.com" );
+            event.preventDefault();
+        });
+    });
+ 
+    </script>
     <script src="src/Thermostat.js"></script>
   </body>
 </html>
