@@ -18,5 +18,10 @@ $( document ).ready( function() {
     thermostat.reset()
     document.getElementById('temp').innerHTML = thermostat.currentTemperature()
   });
+
+  $( "#switch-powersaving" ).click(function() {
+    thermostat.switchPowerSavingMode()
+    document.getElementById('temp').innerHTML = thermostat.currentTemperature()
+  });
     
 });
