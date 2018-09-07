@@ -7,28 +7,29 @@
   </head>
 
   <body>
-    <a href="http://jquery.com">Jquery</a>
       <script src="jquery.js"></script>
-
-    <section>
-      <h1 id="temperature-control">
-        <p>
-          <button id="up">+</button>
-          <p id="temp">0</p>
-          <button id="down">-</button>
-          <button id="reset">reset</button>
-        </p>
-      </h1>
-
-      <h1 id="power-saving-mode">
-        <p>
-          <button id="switch-powersaving">Power Saver</button>
-        </p>
-      </h1>
-    </section>
-
+      
+      <section>
+        <p id="city"></p>
+        <p id="cityTemp"></p>
+        <h1 id="temperature-control">
+          <p>
+            <button id="up">+</button>
+            <p id="temp">0</p>
+            <button id="down">-</button>
+            <button id="reset">reset</button>
+          </p>
+        </h1>
+        
+        <h1 id="power-saving-mode">
+          <p>
+            <button id="switch-powersaving">Power Saver</button>
+          </p>
+        </h1>
+      </section>
+      
+    <script src="src/weatherRequest.js"></script>
     <script src="src/index.js"></script>
     <script src="src/Thermostat.js"></script>
-
   </body>
 </html>

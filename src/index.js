@@ -1,5 +1,6 @@
 $( document ).ready( function() {
 
+  weatherData()
   var thermostat = new Thermostat();
 
   document.getElementById("temp").innerHTML = 20
@@ -25,7 +26,7 @@ $( document ).ready( function() {
 
   function updateTemperature() {
     $( '#temp' ).text(thermostat.currentTemperature())
-    $('#temp' ).attr('class', thermostat.energyUsage());
+    $( '#temp' ).attr('class', thermostat.energyUsage());
   }
 
 });
